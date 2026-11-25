@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#060B18">
+<meta name="theme-color" content="#07080A">
 <title>Blake</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="app/icone-192.png">
@@ -17,10 +17,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=Unbounded:wght@500;700&family=Manrope:wght@400;600&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&family=Bungee&family=Libre+Caslon+Text:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg0:#04070F; --bg1:#0A1A3F; --bg2:#0F2A6B;
-  --azul:#1E4FD8; --azul-claro:#6EA8FF;
+  /* Pedro, 25/11: mais preto e neutro, só uma pitada de azul */
+  --bg0:#07080A; --bg1:#101216; --bg2:#121A2C;
+  --azul:#2F5BD3; --azul-claro:#8DB4F5;
   --txt:#F5F7FB; --txt2:rgba(245,247,251,.72); --txt3:rgba(245,247,251,.56);
-  --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --borda:rgba(255,255,255,.12);
+  --glass:rgba(255,255,255,.045); --glass2:rgba(255,255,255,.075); --borda:rgba(255,255,255,.10);
   --ok:#3DDC97; --alerta:#FFB547; --erro:#FF6B7A;
   --r:18px;
   --f-texto:'Inter',system-ui,sans-serif; --f-nome:'Syne',sans-serif; --f-impacto:'Unbounded',sans-serif;
@@ -62,7 +63,7 @@ header{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px
 .marca small{font-size:11px;color:var(--txt3);display:block;letter-spacing:.08em;text-transform:uppercase}
 header .esp{flex:1}
 .btn{font:600 14px var(--f-texto);color:var(--txt);background:var(--glass2);border:1px solid var(--borda);border-radius:999px;padding:10px 16px;cursor:pointer;transition:transform .15s,background .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
-.btn:hover{background:rgba(30,79,216,.35);box-shadow:0 0 0 1px var(--azul),0 6px 24px -6px var(--azul)}
+.btn:hover{background:rgba(47,91,211,.18);box-shadow:0 0 0 1px var(--azul),0 6px 24px -6px var(--azul)}
 .btn:active{transform:scale(.95)}
 .btn.pri{background:var(--azul);border-color:transparent;color:#fff}
 .btn.pri:hover{background:#2C5DE8}
@@ -78,7 +79,7 @@ main{padding:8px clamp(16px,2.6vw,36px) 80px;min-width:0}
 .lateral a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;color:var(--txt2);text-decoration:none;font-size:14px;font-weight:500;transition:background .2s,color .2s}
 .lateral a i{width:8px;height:8px;border-radius:3px;background:var(--borda);flex:none;transition:background .2s}
 .lateral a:hover{background:var(--glass2);color:var(--txt)}
-.lateral a.on{background:rgba(30,79,216,.22);color:var(--txt)}.lateral a.on i{background:var(--azul-claro)}
+.lateral a.on{background:rgba(47,91,211,.08);color:var(--txt)}.lateral a.on i{background:var(--azul-claro)}
 .lateral a small{margin-left:auto;font-size:10px;color:var(--txt3)}
 .ped-item{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--borda)}.ped-item:last-child{border-bottom:0}
 .ped-item>div{flex:1;min-width:0}.ped-item b{display:block;font-size:14px;font-weight:600;overflow-wrap:anywhere}.ped-item small{color:var(--txt3);font-size:12px}
@@ -108,7 +109,7 @@ main{padding:8px clamp(16px,2.6vw,36px) 80px;min-width:0}
 /* Quadro (Trello/ClickUp) */
 .kb{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,300px);gap:14px;overflow-x:auto;padding-bottom:12px;align-items:start}
 .kb-lista{background:var(--glass);border:1px solid var(--borda);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:120px}
-.kb-lista.sobre{border-color:var(--azul-claro);background:rgba(30,79,216,.12)}
+.kb-lista.sobre{border-color:var(--azul-claro);background:rgba(47,91,211,.08)}
 .kb-lista header{position:static;padding:0;background:none;backdrop-filter:none;display:flex;align-items:center;gap:8px}
 .kb-lista header b{font-size:14px;flex:1}.kb-lista header span{font-size:12px;color:var(--txt3)}
 .kb-card{background:var(--glass2);border:1px solid var(--borda);border-radius:12px;padding:10px 12px;cursor:grab;transition:transform .15s,box-shadow .15s;font-size:14px}
@@ -222,8 +223,8 @@ body.claro .area .priv{color:var(--azul)}
 label{display:block;font-size:12px;color:var(--txt2);margin-bottom:6px;letter-spacing:.02em}
 input,select,textarea{width:100%;font:400 15px var(--f-texto);color:var(--txt);background:rgba(0,0,0,.25);border:1px solid var(--borda);border-radius:12px;padding:11px 13px;outline:none;transition:border-color .2s,box-shadow .2s}
 body.claro input,body.claro select,body.claro textarea{background:#fff}
-input:focus,select:focus,textarea:focus{border-color:var(--azul-claro);box-shadow:0 0 0 3px rgba(30,79,216,.25)}
-select option{background:#0A1A3F;color:#fff}
+input:focus,select:focus,textarea:focus{border-color:var(--azul-claro);box-shadow:0 0 0 3px rgba(47,91,211,.08)}
+select option{background:#141518;color:#fff}
 body.claro select option{background:#fff;color:#05080F}
 .form{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));align-items:end}
 .form .full{grid-column:1/-1}
@@ -241,8 +242,8 @@ body.claro select option{background:#fff;color:#05080F}
 .item .st{font-size:12px;color:var(--txt3);margin-top:2px}
 .item .val{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .tag{font-size:11px;padding:3px 9px;border-radius:999px;background:var(--glass2);border:1px solid var(--borda);color:var(--txt2);white-space:nowrap}
-.tag.az{background:rgba(30,79,216,.3);color:#cfe0ff;border-color:transparent}
-body.claro .tag.az{color:var(--azul);background:rgba(30,79,216,.12)}
+.tag.az{background:rgba(47,91,211,.18);color:#cfe0ff;border-color:transparent}
+body.claro .tag.az{color:var(--azul);background:rgba(47,91,211,.08)}
 .vazio{color:var(--txt3);font-size:14px;padding:18px 4px}
 .barra{height:10px;border-radius:999px;background:var(--glass2);overflow:hidden;margin-top:10px}
 .barra i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--azul),var(--azul-claro));transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
@@ -310,7 +311,7 @@ body.claro .tag.az{color:var(--azul);background:rgba(30,79,216,.12)}
 .pasta h3 i{width:14px;height:14px;border-radius:4px;display:inline-block}
 .sem{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;cursor:pointer;font-size:14px;color:var(--txt2);transition:background .2s}
 .sem:hover{background:var(--glass2);color:var(--txt)}
-.sem.on{background:rgba(30,79,216,.3);color:var(--txt)}
+.sem.on{background:rgba(47,91,211,.18);color:var(--txt)}
 .est-barra{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:22px 0 16px}
 .est-barra .grp{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .est-barra .rot{font-size:12px;color:var(--txt3);margin-right:2px}
@@ -331,7 +332,7 @@ body.claro .tag.az{color:var(--azul);background:rgba(30,79,216,.12)}
 .ok-lista li{padding:4px 0;display:flex;gap:8px;color:var(--txt2)}
 .radio{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid var(--borda);border-radius:10px;margin-top:6px;cursor:pointer;font-size:14px}
 .radio input{width:16px;height:16px;margin-top:2px;accent-color:var(--azul);flex:none}
-.radio.on{border-color:var(--azul-claro);background:rgba(30,79,216,.15)}
+.radio.on{border-color:var(--azul-claro);background:rgba(47,91,211,.08)}
 .status{font-size:12px;padding:4px 10px;border-radius:999px;font-weight:600}
 .st-rascunho{background:var(--glass2);color:var(--txt2)}
 .st-copy{background:rgba(255,181,71,.18);color:var(--alerta)}
@@ -741,7 +742,7 @@ footer{text-align:center;color:var(--txt3);font-size:12px;padding:30px 16px 40px
   <div class="cab">
     <a class="btn peq voltar" href="#inicio">← Início</a>
     <h1>Referências <em>por nicho</em></h1>
-    <p class="deck">Só inspiração: cada miniatura tem o crédito do autor e leva ao projeto original no Behance. Filtre pelo nicho abaixo. Meta: 100 únicas por nicho.</p>
+    <p class="deck">Só inspiração: cada miniatura tem o crédito do autor e leva ao projeto original no Behance. Filtre pelo nicho abaixo. Meta: 500 por nicho; quando bater, sobe para 1.000, depois 2.000, e assim por diante.</p>
   </div>
   <div class="linha-tit" style="margin-bottom:12px"><div class="chips" id="filtro-nicho"></div></div>
   <div class="grade g3" id="refs"></div>
@@ -1287,7 +1288,7 @@ function rRefs(){
   const TODAS=[...S.refs.slice().reverse(),...BH.map(b=>({id:'bh'+b.id,link:b.link,nicho:b.nicho,autor:b.t+' — '+b.autor,tipo:'Behance · curadoria Blake',notas:b.nota,fixa:true,bh:b}))];
   const cont={};TODAS.forEach(r=>cont[r.nicho]=(cont[r.nicho]||0)+1);
   const usados=NICHOS.filter(n=>cont[n]);
-  $('#filtro-nicho').innerHTML=[['Todos',TODAS.length],...usados.map(n=>[n,cont[n]])].map(([n,c])=>`<button class="chip${filtroNicho===n?' on':''}" data-n="${esc(n)}">${esc(n)} · ${c}${n!=='Todos'?'/'+BH_META:''}</button>`).join('');
+  $('#filtro-nicho').innerHTML=[['Todos',TODAS.length],...usados.map(n=>[n,cont[n]])].map(([n,c])=>`<button class="chip${filtroNicho===n?' on':''}" data-n="${esc(n)}">${esc(n)} · ${c}${n!=='Todos'?'/'+metaRef(c):''}</button>`).join('');
   const R=TODAS.filter(r=>filtroNicho==='Todos'||r.nicho===filtroNicho);
   $('#refs').innerHTML=R.slice(0,limRefs).map(r=>{let host='';try{host=new URL(r.link).hostname.replace('www.','')}catch(e){}
     return `<div class="card">${r.bh?miniBH(r.bh).replace('margin:-16px -16px 12px','margin:-22px -22px 14px'):''}<div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag az">${esc(r.nicho)}</span><span class="tag">${esc(r.tipo)}</span></div>
@@ -1578,7 +1579,14 @@ const BH=[
 ].map(([id,t,autor,nicho,m,l,nota,n],i)=>({id,link:'https://www.behance.net/gallery/'+id,t,autor,nicho,m,l,nota,fonte:'Behance',img:'refs/'+String(n||i+1).padStart(2,'0')+'.jpg'}));
 // miniatura com crédito: a imagem leva ao projeto original no Behance
 const miniBH=(b)=>`<a href="${esc(b.link)}" target="_blank" rel="noopener noreferrer" title="${esc(b.t)} — ${esc(b.autor)} (Behance)" style="display:block;margin:-16px -16px 12px;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r) var(--r) 0 0;background:var(--glass2)"><img src="${esc(b.img)}" alt="${esc(b.t)}, de ${esc(b.autor)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentNode.style.display='none'"></a>`;
-const BH_META=500;
+// Meta de referências por nicho: 500; quando bater, dobra (1.000, 2.000...). Pedro, 25/11/2026.
+const metaRef=n=>{let m=500;while(n>=m)m*=2;return m};
+// Referências coletadas em lote no Behance (projetos reais, com autor e link): ficam em refs/behance.json, por nicho.
+const BH_CDN='https://mir-s3-cdn-cf.behance.net/projects/404/';
+fetch('refs/behance.json').then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.nichos)return;const ja=new Set(BH.map(b=>b.id.split('/')[0]));
+  for(const [nicho,lista] of Object.entries(j.nichos))for(const [id,t,autor,im] of lista){const n=id.split('/')[0];if(ja.has(n))continue;ja.add(n);
+    BH.push({id,link:'https://www.behance.net/gallery/'+id,t,autor,nicho,m:nicho==='Arroz e alimentos'?'*':'x',l:null,nota:'',fonte:'Behance',img:BH_CDN+im,lote:true})}
+  const p=location.hash.slice(1)||'inicio';if(p==='referencias')rRefs();else if(p==='estudio')montarEstudio()}).catch(()=>{});
 const E=()=>S.estudio;
 const chave=()=>`${E().marca}-${E().semana}-${E().slot}`;
 function arte(k=chave()){
@@ -2268,26 +2276,28 @@ function montarEstudio(){
   rFeedback();
   const bhs=refsDaArte(a).map(i=>({...BH[i],i}));
   $('#bh-cont').textContent=`${bhs.length} desta arte · ${BH.length} curadas no total`;
-  $('#est-bh').innerHTML=bhs.map(b=>`<div class="card" style="padding:16px${a.ref===b.id?';border-color:var(--azul-claro)':''}">${miniBH(b)}<div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag az">${esc(b.nicho)}</span><span class="tag">${LAYS_BASE[b.l]||''}</span></div>
+  $('#est-bh').innerHTML=bhs.map(b=>`<div class="card" style="padding:16px${a.ref===b.id?';border-color:var(--azul-claro)':''}">${miniBH(b)}<div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag az">${esc(b.nicho)}</span>${b.l!=null?'<span class="tag">'+LAYS_BASE[b.l]+'</span>':''}</div>
     <a href="${esc(b.link)}" target="_blank" rel="noopener noreferrer" style="display:block;color:var(--txt);text-decoration:none;font-weight:600;margin:10px 0 2px">${esc(b.t)} ↗</a><div style="font-size:12px;color:var(--txt3)">${esc(b.autor)} · Behance</div>
-    <p style="font-size:13px;color:var(--txt2);margin:8px 0 12px;line-height:1.45">${esc(b.nota)}</p><button class="btn peq${a.ref===b.id?' pri':''}" data-bh="${b.i}">${a.ref===b.id?'Estrutura em uso ✓':'Testar estrutura'}</button></div>`).join('');
+    ${b.nota?'<p style="font-size:13px;color:var(--txt2);margin:8px 0 12px;line-height:1.45">'+esc(b.nota)+'</p>':''}${b.l!=null?'<button class="btn peq'+(a.ref===b.id?' pri':'')+'" data-bh="'+b.i+'">'+(a.ref===b.id?'Estrutura em uso ✓':'Testar estrutura')+'</button>':''}</div>`).join('');
   const ri=BH.find(b=>b.id===a.ref);$('#est-insp').innerHTML=ri?`Estrutura inspirada em <a href="${esc(ri.link)}" target="_blank" rel="noopener noreferrer" style="color:var(--azul-claro)">${esc(ri.t)}</a> (${esc(ri.autor)})`:'';
   desenharTudo(true);
 }
-// Referências por arte: cada arte recebe um conjunto próprio (8 do nicho da marca + 4 de outros nichos).
-// Uma referência já usada em outra arte só volta quando todas as outras já foram usadas.
-const REF_N=12;
-function refsDaArte(a,trocar){const k=chave();if(a.bhSel&&!trocar&&a.bhSel.every(id=>BH.some(b=>b.id===id)))return a.bhSel.map(id=>BH.findIndex(b=>b.id===id));
+// Referências por arte (Pedro, 25/11: "de uma arte eu quero 100 referências, e sempre atualizando"):
+// 100 por arte, 70 do nicho da marca + 30 de outros nichos. As menos usadas nas outras artes vêm primeiro.
+// Quando o acervo cresce (nova coleta no Behance), cada arte troca as referências sozinha.
+const REF_N=100,REF_MARCA=70;
+function refsDaArte(a,trocar){const k=chave();if(a.bhSel&&!trocar&&a.bhVer===BH.length&&a.bhSel.every(id=>BH.some(b=>b.id===id)))return a.bhSel.map(id=>BH.findIndex(b=>b.id===id));
   const letra={engenho:'e',gringo:'g',granjeiro:'j'}[E().marca],uso={};
   Object.entries(E().artes).forEach(([kk,x])=>{if(kk!==k)(x.bhSel||[]).forEach(id=>uso[id]=(uso[id]||0)+1)});(a.bhHist||[]).forEach(id=>uso[id]=(uso[id]||0)+.5);
   const r=rngDe(Date.now()%1e6),ord=arr=>arr.map(i=>[uso[BH[i].id]||0,r(),i]).sort((x,y)=>x[0]-y[0]||x[1]-y[1]).map(x=>x[2]);
   const idx=BH.map((b,i)=>i),daMarca=ord(idx.filter(i=>BH[i].m.includes(letra)||BH[i].m==='*')),outros=ord(idx.filter(i=>BH[i].m==='x'));
-  // primeiro só as nunca usadas: até 8 do nicho da marca, o resto de outros nichos (variando o nicho); só repete se acabar
-  const livre=i=>!uso[BH[i].id],sel=daMarca.filter(livre).slice(0,8),nichos=new Set();
-  for(const i of outros.filter(livre)){if(sel.length>=REF_N)break;if(nichos.has(BH[i].nicho)&&nichos.size<6)continue;nichos.add(BH[i].nicho);sel.push(i)}
-  for(const i of outros.filter(livre))if(sel.length<REF_N&&!sel.includes(i))sel.push(i);
-  for(const i of [...daMarca,...outros])if(sel.length<REF_N&&!sel.includes(i))sel.push(i);
-  a.bhHist=[...new Set([...(a.bhHist||[]),...(a.bhSel||[])])].slice(-60);a.bhSel=sel.map(i=>BH[i].id);salvar();return sel}
+  // daMarca/outros já vêm ordenadas da menos usada para a mais usada; um conjunto (Set) evita repetir dentro da mesma arte
+  const sel=[],tem=new Set(),pega=i=>{if(!tem.has(i)){tem.add(i);sel.push(i)}};
+  for(const i of daMarca){if(sel.length>=REF_MARCA)break;pega(i)}
+  const porNicho={};outros.forEach(i=>(porNicho[BH[i].nicho]=porNicho[BH[i].nicho]||[]).push(i));const filas=Object.values(porNicho);
+  for(let rodada=0;sel.length<REF_N&&filas.some(f=>f.length);rodada++)for(const f of filas){if(sel.length>=REF_N)break;if(f.length)pega(f.shift())}
+  for(const i of daMarca)if(sel.length<REF_N)pega(i);
+  a.bhHist=[...new Set([...(a.bhHist||[]),...(a.bhSel||[])])].slice(-300);a.bhSel=sel.map(i=>BH[i].id);a.bhVer=BH.length;salvar();return sel}
 function pintarTitulos(){const a=arte(),c=a.copy;const ts=[c.titulo,c.var1,c.var2];
   $('#est-titulos').innerHTML=ts.map((t,i)=>t?`<label class="radio${a.escolha===i?' on':''}"><input type="radio" name="tit" value="${i}" ${a.escolha===i?'checked':''}><span>${esc(t)}<br><small style="color:var(--txt3)">${i?'Variação '+i:'Título principal'}</small></span></label>`:'').join('')||'<div class="vazio">Cole a copy da Olivia acima.</div>'}
 let refsObs=null;
@@ -2505,7 +2515,7 @@ function confete(){
   let f=0;(function loop(){ctx.clearRect(0,0,cv.width,cv.height);P.forEach(p=>{p.vy+=.45;p.x+=p.vx;p.y+=p.vy;p.a+=.2;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=p.c;ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*.6);ctx.restore()});if(++f<110)requestAnimationFrame(loop);else ctx.clearRect(0,0,cv.width,cv.height)})();
 }
 // Tema claro/escuro (Ideia 59)
-function aplicarTema(){document.body.classList.toggle('claro',S.tema==='claro');$('meta[name=theme-color]').content=S.tema==='claro'?'#EEF2FA':'#060B18'}
+function aplicarTema(){document.body.classList.toggle('claro',S.tema==='claro');$('meta[name=theme-color]').content=S.tema==='claro'?'#EEF2FA':'#07080A'}
 $('#tema').addEventListener('click',()=>{S.tema=S.tema==='claro'?'escuro':'claro';salvar();aplicarTema()});
 
 /* ---------- Início ---------- */
