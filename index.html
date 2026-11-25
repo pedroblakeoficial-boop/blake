@@ -934,7 +934,7 @@ addEventListener('hashchange',ir);
 /* ---------- PEDIDOS AO CLAUDE ----------
    Cada pedido vira uma issue (etiqueta "pedido") no repositório do Blake no GitHub.
    O Claude, no computador do estúdio, lê as issues, faz o pedido e comenta; a lista aqui lê o status pela API pública do GitHub (sem senha). */
-const GH_PADRAO='';
+const GH_PADRAO='pedroblakeoficial-boop/blake';
 const repoGH=()=>(S.ghRepo||GH_PADRAO||'').trim().replace(/^https?:\/\/github\.com\//,'').replace(/\/$/,'');
 let pedGH=null,pedErro='';
 async function carregaPedidosGH(){const r=repoGH();if(!r){pedGH=null;return}
