@@ -1,6 +1,6 @@
 // Blake — modo offline. Página: rede primeiro (pega a versão nova), cópia guardada se estiver sem internet.
 // Imagens e fontes: cópia guardada primeiro (rápido), atualiza em segundo plano.
-const CACHE = 'blake-v1';
+const CACHE = 'blake-v2';
 const BASE = ['./', './index.html', './manifest.webmanifest', './app/icone-192.png', './app/icone-512.png'];
 
 self.addEventListener('install', e => {
