@@ -1,6 +1,6 @@
 // Blake — modo offline. Página: rede primeiro (pega a versão nova), cópia guardada se estiver sem internet.
 // Imagens e fontes: cópia guardada primeiro (rápido), atualiza em segundo plano.
-const CACHE = 'blake-v3';
+const CACHE = 'blake-v4';
 const BASE = ['./', './index.html', './manifest.webmanifest', './app/icone-192.png', './app/icone-512.png'];
 
 self.addEventListener('install', e => {
@@ -18,6 +18,12 @@ self.addEventListener('fetch', e => {
   if (r.mode === 'navigate') {
     e.respondWith(fetch(r).then(res => { const cp = res.clone(); caches.open(CACHE).then(c => c.put('./index.html', cp)); return res; })
       .catch(() => caches.match('./index.html')));
+    return;
+  }
+  // Referências (refs/*.json) mudam sempre: rede primeiro, cópia guardada só sem internet
+  if (url.pathname.endsWith('.json')) {
+    e.respondWith(fetch(r, { cache: 'no-cache' }).then(res => { const cp = res.clone(); caches.open(CACHE).then(c => c.put(r, cp)); return res; })
+      .catch(() => caches.match(r)));
     return;
   }
   e.respondWith(caches.match(r).then(hit => {

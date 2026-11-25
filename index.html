@@ -1583,7 +1583,7 @@ const miniBH=(b)=>`<a href="${esc(b.link)}" target="_blank" rel="noopener norefe
 const metaRef=n=>{let m=500;while(n>=m)m*=2;return m};
 // Referências coletadas em lote no Behance (projetos reais, com autor e link): ficam em refs/behance.json, por nicho.
 const BH_CDN='https://mir-s3-cdn-cf.behance.net/projects/404/';
-fetch('refs/behance.json').then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.nichos)return;const ja=new Set(BH.map(b=>b.id.split('/')[0]));
+fetch('refs/behance.json').then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.nichos)return;for(const n of Object.keys(j.nichos))if(!NICHOS.includes(n))NICHOS.push(n);const ja=new Set(BH.map(b=>b.id.split('/')[0]));
   for(const [nicho,lista] of Object.entries(j.nichos))for(const [id,t,autor,im] of lista){const n=id.split('/')[0];if(ja.has(n))continue;ja.add(n);
     BH.push({id,link:'https://www.behance.net/gallery/'+id,t,autor,nicho,m:nicho==='Arroz e alimentos'?'*':'x',l:null,nota:'',fonte:'Behance',img:BH_CDN+im,lote:true})}
   const p=location.hash.slice(1)||'inicio';if(p==='referencias')rRefs();else if(p==='estudio')montarEstudio()}).catch(()=>{});
